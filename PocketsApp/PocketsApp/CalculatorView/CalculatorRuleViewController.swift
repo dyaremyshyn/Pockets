@@ -14,133 +14,68 @@ final class CalculatorRuleViewController: UIViewController {
     let titleSize:CGFloat = 22
     
     private lazy var incomeTitle: UILabel = {
-        let view = UILabel()
-        view.text = "Monthly after-tax income"
-        view.font = .boldSystemFont(ofSize: titleSize)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+        return createTitle(text: "Monthly after-tax income")
     }()
     
-    private lazy var incomeTextField: UITextField = {
-        let view = UITextField(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
-        view.font = .boldSystemFont(ofSize: titleSize)
-        view.layer.borderWidth = 0.5
-        view.delegate = self
-        view.layer.borderColor = UIColor.lightGray.cgColor
-        view.placeholder = "0€"
+    private lazy var incomeTextField: IncomeTextFieldView = {
+        let view = IncomeTextFieldView()
+        view.textField.delegate = self
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     private lazy var necessitiesLabel: UILabel = {
-        let view = UILabel()
-        view.textColor = .blue
-        view.text = "0€"
-        view.font = .boldSystemFont(ofSize: textSize)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+        return createLabel()
     }()
     
     private lazy var wantsLabel: UILabel = {
-        let view = UILabel()
-        view.textColor = .blue
-        view.text = "0€"
-        view.font = .boldSystemFont(ofSize: textSize)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+        return createLabel()
     }()
     
     private lazy var savingsLabel: UILabel = {
-        let view = UILabel()
-        view.textColor = .blue
-        view.text = "0€"
-        view.font = .boldSystemFont(ofSize: textSize)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+        return createLabel()
     }()
-
+    
     private lazy var necessitiesTitle: UILabel = {
-        let view = UILabel()
-        view.text = "NECESSITIES"
-        view.font = .boldSystemFont(ofSize: titleSize)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+        return createTitle(text: "NECESSITIES")
     }()
     
     private lazy var wantsTitle: UILabel = {
-        let view = UILabel()
-        view.text = "WANTS"
-        view.font = .boldSystemFont(ofSize: titleSize)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+        return createTitle(text: "WANTS")
     }()
     
     private lazy var savingsTitle: UILabel = {
-        let view = UILabel()
-        view.text = "SAVINGS AND DEBT REPAYMENT"
-        view.font = .boldSystemFont(ofSize: titleSize)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+        return createTitle(text: "SAVINGS AND DEBT REPAYMENT")
     }()
     
     private lazy var necessitiesStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [necessitiesTitle, necessitiesLabel])
-        stackView.axis = .vertical
-        stackView.spacing = 5
-        stackView.alignment = .fill
-        stackView.distribution = .fill
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
+        return createStackView(views: [necessitiesTitle, necessitiesLabel])
     }()
     
     private lazy var wantsStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [wantsTitle, wantsLabel])
-        stackView.axis = .vertical
-        stackView.spacing = 5
-        stackView.alignment = .fill
-        stackView.distribution = .fill
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
+        return createStackView(views: [wantsTitle, wantsLabel])
     }()
     
     private lazy var savingsStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [savingsTitle, savingsLabel])
-        stackView.axis = .vertical
-        stackView.spacing = 5
-        stackView.alignment = .fill
-        stackView.distribution = .fill
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
+        return createStackView(views: [savingsTitle, savingsLabel])
     }()
     
     private lazy var incomeStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [incomeTitle, incomeTextField])
-        stackView.axis = .vertical
-        stackView.spacing = 5
-        stackView.alignment = .fill
-        stackView.distribution = .fill
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
+        return createStackView(views: [incomeTitle, incomeTextField])
     }()
     
     private lazy var mainStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [
+        return createStackView(views: [
             incomeStackView,
             necessitiesStackView,
             wantsStackView,
             savingsStackView
-        ])
-        stackView.spacing = 25
-        stackView.axis = .vertical
-        stackView.alignment = .fill
-        stackView.distribution = .fill
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
+        ], spacing: 25)
     }()
     
     private lazy var nextButton: UIButton = {
         let view = UIButton(type: .custom)
-        view.setTitle("Next", for: .normal)
+        view.setTitle("Start", for: .normal)
         view.setTitleColor(.blue, for: .normal)
         view.addTarget(self, action: #selector(nextView), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -151,10 +86,8 @@ final class CalculatorRuleViewController: UIViewController {
     // MARK: LifeCycle and Initializers
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         createView()
     }
-    
     
     init(selectedRule: Rule) {
         self.selectedRule = selectedRule
@@ -166,12 +99,38 @@ final class CalculatorRuleViewController: UIViewController {
     }
     
     // MARK: Selectors Funcs
-    
     @objc func nextView() {
         // navigate to the next view, when user will append expenses
     }
     
     // MARK: CreateView
+    func createLabel() -> UILabel {
+        let view = UILabel()
+        view.textColor = .blue
+        view.text = "0€"
+        view.font = .boldSystemFont(ofSize: textSize)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }
+    
+    func createTitle(text: String) -> UILabel {
+        let view = UILabel()
+        view.text = text
+        view.font = .boldSystemFont(ofSize: titleSize)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }
+    
+    func createStackView(views: [UIView], spacing: CGFloat = 5) -> UIStackView {
+        let stackView = UIStackView(arrangedSubviews: views)
+        stackView.axis = .vertical
+        stackView.spacing = spacing
+        stackView.alignment = .fill
+        stackView.distribution = .fill
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }
+    
     func createView() {
         view.backgroundColor = .white
         view.addSubview(nextButton)
@@ -182,15 +141,23 @@ final class CalculatorRuleViewController: UIViewController {
         nextButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         nextButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
-        mainStackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
+        mainStackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
         mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24).isActive = true
         mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:  -24).isActive = true
     }
 }
 
 extension CalculatorRuleViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        incomeTextField.textField.layer.borderColor = UIColor.lightGray.cgColor
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        incomeTextField.textField.layer.borderColor = UIColor.blue.cgColor
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        var text = incomeTextField.text
+        var text = incomeTextField.textField.text
         if let char = string.cString(using: String.Encoding.utf8) {
             let isBackSpace = strcmp(char, "\\b")
             if (isBackSpace == -92) {
@@ -200,7 +167,6 @@ extension CalculatorRuleViewController: UITextFieldDelegate {
                 text?.append(string)
             }
             
-            //calculateBudget(valueString: text ?? "")
             let result = selectedRule.calculatePercentage(incomeSalary: text ?? "")
             assignValues(values: result)
         }
