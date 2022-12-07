@@ -137,6 +137,7 @@
                     <connections>
                         <outlet property="descriptionFirstRuleLabel" destination="q8s-mf-M9u" id="NWJ-ei-0sr"/>
                         <outlet property="firstRuleRadioButton" destination="Jaf-5L-ZJ5" id="aT5-J6-hl7"/>
+                        <outlet property="nextButton" destination="juk-TM-IfJ" id="s9C-3f-12l"/>
                         <outlet property="secondRuleRadioButton" destination="eRr-h6-lUh" id="tL8-eM-Tg1"/>
                     </connections>
                 </viewController>
