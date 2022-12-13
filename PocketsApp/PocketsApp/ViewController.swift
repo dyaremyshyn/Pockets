@@ -44,12 +44,8 @@ final class ViewController: UIViewController {
             let vc = CalculatorRuleViewController(selectedRule: Rule(necessitiesPercentage: 50.0, wantsPercentage: 30.0, savingsPercentage: 20.0))
             self.show(vc, sender: self)
         } else {
-            let vc = CreateRuleViewController()
+            let vc = CustomRuleViewController()
             self.show(vc, sender: self)
         }
     }
-}
-
-final class CreateRuleViewController: UIViewController {
-    
 }

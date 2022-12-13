@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEA0C8C72948A46700B82A0E /* CustomRuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0C8C62948A46700B82A0E /* CustomRuleViewController.swift */; };
+		CEA0C8C82948A46700B82A0E /* CustomRuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0C8C62948A46700B82A0E /* CustomRuleViewController.swift */; };
+		CEA0C8CA2948A50F00B82A0E /* CustomRuleScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA0C8C92948A50F00B82A0E /* CustomRuleScreen.storyboard */; };
+		CEA0C8CB2948A50F00B82A0E /* CustomRuleScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA0C8C92948A50F00B82A0E /* CustomRuleScreen.storyboard */; };
+		CEA0C8CD2948A67300B82A0E /* RuleSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0C8CC2948A67300B82A0E /* RuleSliderView.swift */; };
+		CEA0C8CE2948A67300B82A0E /* RuleSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0C8CC2948A67300B82A0E /* RuleSliderView.swift */; };
 		CEEBBC7A293E43E700323FC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEBBC79293E43E700323FC1 /* AppDelegate.swift */; };
 		CEEBBC7C293E43E700323FC1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEBBC7B293E43E700323FC1 /* SceneDelegate.swift */; };
 		CEEBBC7E293E43E700323FC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEBBC7D293E43E700323FC1 /* ViewController.swift */; };
@@ -44,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CEA0C8C62948A46700B82A0E /* CustomRuleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRuleViewController.swift; sourceTree = "<group>"; };
+		CEA0C8C92948A50F00B82A0E /* CustomRuleScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomRuleScreen.storyboard; sourceTree = "<group>"; };
+		CEA0C8CC2948A67300B82A0E /* RuleSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleSliderView.swift; sourceTree = "<group>"; };
 		CEEBBC76293E43E700323FC1 /* PocketsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEBBC79293E43E700323FC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEEBBC7B293E43E700323FC1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CEA0C8C52948A44600B82A0E /* CustomRule */ = {
+			isa = PBXGroup;
+			children = (
+				CEA0C8C62948A46700B82A0E /* CustomRuleViewController.swift */,
+			);
+			path = CustomRule;
+			sourceTree = "<group>";
+		};
 		CEEBBC6D293E43E700323FC1 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +128,7 @@
 		CEEBBC78293E43E700323FC1 /* PocketsApp */ = {
 			isa = PBXGroup;
 			children = (
+				CEA0C8C52948A44600B82A0E /* CustomRule */,
 				CEEBBCAD2940B1B900323FC1 /* CalculatorView */,
 				CEEBBCA9293FA61300323FC1 /* Components */,
 				CEEBBC79293E43E700323FC1 /* AppDelegate.swift */,
@@ -120,6 +138,7 @@
 				CEEBBC82293E43EB00323FC1 /* Assets.xcassets */,
 				CEEBBC84293E43EB00323FC1 /* LaunchScreen.storyboard */,
 				CEEBBC87293E43EB00323FC1 /* Info.plist */,
+				CEA0C8C92948A50F00B82A0E /* CustomRuleScreen.storyboard */,
 			);
 			path = PocketsApp;
 			sourceTree = "<group>";
@@ -146,6 +165,7 @@
 			children = (
 				CEEBBCAA293FA62F00323FC1 /* CheckBox.swift */,
 				CEEBBCB72940FEC400323FC1 /* IncomeTextFieldView.swift */,
+				CEA0C8CC2948A67300B82A0E /* RuleSliderView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -264,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEEBBC86293E43EB00323FC1 /* LaunchScreen.storyboard in Resources */,
+				CEA0C8CA2948A50F00B82A0E /* CustomRuleScreen.storyboard in Resources */,
 				CEEBBC83293E43EB00323FC1 /* Assets.xcassets in Resources */,
 				CEEBBC81293E43E700323FC1 /* Main.storyboard in Resources */,
 			);
@@ -273,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA0C8CB2948A50F00B82A0E /* CustomRuleScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +315,8 @@
 				CEEBBCAB293FA62F00323FC1 /* CheckBox.swift in Sources */,
 				CEEBBCB82940FEC400323FC1 /* IncomeTextFieldView.swift in Sources */,
 				CEEBBC7E293E43E700323FC1 /* ViewController.swift in Sources */,
+				CEA0C8C72948A46700B82A0E /* CustomRuleViewController.swift in Sources */,
+				CEA0C8CD2948A67300B82A0E /* RuleSliderView.swift in Sources */,
 				CEEBBC7A293E43E700323FC1 /* AppDelegate.swift in Sources */,
 				CEEBBCAF2940B1CD00323FC1 /* CalculatorRuleViewController.swift in Sources */,
 				CEEBBC7C293E43E700323FC1 /* SceneDelegate.swift in Sources */,
@@ -305,6 +329,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEEBBCAC293FA62F00323FC1 /* CheckBox.swift in Sources */,
+				CEA0C8C82948A46700B82A0E /* CustomRuleViewController.swift in Sources */,
+				CEA0C8CE2948A67300B82A0E /* RuleSliderView.swift in Sources */,
 				CEEBBCB62940EDD200323FC1 /* Rule.swift in Sources */,
 				CEEBBCB02940B1CD00323FC1 /* CalculatorRuleViewController.swift in Sources */,
 				CEEBBC91293E43EB00323FC1 /* PocketsAppTests.swift in Sources */,

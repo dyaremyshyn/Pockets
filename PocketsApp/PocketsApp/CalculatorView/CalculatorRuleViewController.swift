@@ -9,7 +9,7 @@ import UIKit
 
 final class CalculatorRuleViewController: UIViewController {
    // MARK: Vars and Components
-    var selectedRule: Rule
+    private var selectedRule: Rule
     let textSize:CGFloat = 30
     let titleSize:CGFloat = 22
     
@@ -101,6 +101,10 @@ final class CalculatorRuleViewController: UIViewController {
     // MARK: Selectors Funcs
     @objc func nextView() {
         // navigate to the next view, when user will append expenses
+        selectedRule.storeValue()
+        UserDefaults.standard.set(incomeTextField.textField.text, forKey: "incomeValue")
+        let vc = UIViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: CreateView
@@ -147,6 +151,7 @@ final class CalculatorRuleViewController: UIViewController {
     }
 }
 
+// MARK: Extension
 extension CalculatorRuleViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         incomeTextField.textField.layer.borderColor = UIColor.lightGray.cgColor

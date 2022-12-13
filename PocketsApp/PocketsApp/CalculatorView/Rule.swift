@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Rule {
+struct Rule: Codable {
     var necessitiesPercentage: Float
     var wantsPercentage: Float
     var savingsPercentage: Float
@@ -16,9 +16,9 @@ struct Rule {
         var ruleValues = RuleValues(necessitiesValue: "0", wantsValue: "0", savingsValue: "0")
         guard let income = Float(incomeSalary), income > 0 else { return ruleValues.transformValues() }
 
-        ruleValues.necessitiesValue = String(format: "%.2f",(income * (necessitiesPercentage / 100)))
-        ruleValues.wantsValue = String(format: "%.2f",(income * (wantsPercentage / 100)))
-        ruleValues.savingsValue = String(format: "%.2f",(income * (savingsPercentage / 100)))
+        ruleValues.necessitiesValue = String(format: "%.0f",(income * (necessitiesPercentage / 100)))
+        ruleValues.wantsValue = String(format: "%.0f",(income * (wantsPercentage / 100)))
+        ruleValues.savingsValue = String(format: "%.0f",(income * (savingsPercentage / 100)))
         
         return ruleValues.transformValues()
     }
@@ -34,5 +34,20 @@ struct RuleValues {
         wantsValue += "€"
         savingsValue += "€"
         return self
+    }
+}
+
+extension Rule {
+    func storeValue() {
+        guard let encoded = try? JSONEncoder().encode(self) else { return }
+        UserDefaults.standard.set(encoded, forKey: "selectedRule")
+    }
+    
+    mutating func retriveValue() {
+        guard let data = UserDefaults.standard.object(forKey: "selectedRule") as? Data,
+              let object = try? JSONDecoder().decode(Rule.self, from: data) else {
+                  return
+              }
+        self = object
     }
 }
