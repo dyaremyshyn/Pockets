@@ -16,9 +16,9 @@ struct Rule: Codable {
         var ruleValues = RuleValues(necessitiesValue: "0", wantsValue: "0", savingsValue: "0")
         guard let income = Float(incomeSalary), income > 0 else { return ruleValues.transformValues() }
 
-        ruleValues.necessitiesValue = String(format: "%.0f",(income * (necessitiesPercentage / 100)))
-        ruleValues.wantsValue = String(format: "%.0f",(income * (wantsPercentage / 100)))
-        ruleValues.savingsValue = String(format: "%.0f",(income * (savingsPercentage / 100)))
+        ruleValues.necessitiesValue = String(format: "%.2f",(income * (necessitiesPercentage / 100)))
+        ruleValues.wantsValue = String(format: "%.2f",(income * (wantsPercentage / 100)))
+        ruleValues.savingsValue = String(format: "%.2f",(income * (savingsPercentage / 100)))
         
         return ruleValues.transformValues()
     }
