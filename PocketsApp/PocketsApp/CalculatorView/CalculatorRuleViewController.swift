@@ -103,8 +103,8 @@ final class CalculatorRuleViewController: UIViewController {
         // navigate to the next view, when user will append expenses
         selectedRule.storeValue()
         UserDefaults.standard.set(incomeTextField.textField.text, forKey: "incomeValue")
-        let vc = UIViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        let vc = ExpensesListViewController()
+        show(vc, sender: self)
     }
     
     // MARK: CreateView
