@@ -76,6 +76,20 @@ final class CustomRuleViewController: UIViewController {
         createView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let rule = rule else { return }
+        necessitiesSlider.setDefaultSliderValue(value: rule.necessitiesPercentage)
+        wantsSlider.setDefaultSliderValue(value: rule.wantsPercentage)
+        savingsSlider.setDefaultSliderValue(value: rule.savingsPercentage)
+        
+        necessitiesValue = rule.necessitiesPercentage
+        wantsValue = rule.wantsPercentage
+        savingsValue = rule.savingsPercentage
+        
+        validateValues()
+    }
+    
     //MARK: Create View
     func createView() {
         view.backgroundColor = .white

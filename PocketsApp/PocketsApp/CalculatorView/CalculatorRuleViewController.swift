@@ -12,6 +12,7 @@ final class CalculatorRuleViewController: UIViewController {
     private var selectedRule: Rule
     let textSize:CGFloat = 30
     let titleSize:CGFloat = 22
+    var alreadyHaveRule: Bool = false
     
     private lazy var incomeTitle: UILabel = {
         return createTitle(text: "Monthly after-tax income")
@@ -89,6 +90,11 @@ final class CalculatorRuleViewController: UIViewController {
         createView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getData()
+    }
+    
     init(selectedRule: Rule) {
         self.selectedRule = selectedRule
         super.init(nibName: nil, bundle: nil)
@@ -100,11 +106,32 @@ final class CalculatorRuleViewController: UIViewController {
     
     // MARK: Selectors Funcs
     @objc func nextView() {
-        // navigate to the next view, when user will append expenses
-        selectedRule.storeValue()
-        UserDefaults.standard.set(incomeTextField.textField.text, forKey: "incomeValue")
+        saveData()
         let vc = ExpensesListViewController()
         show(vc, sender: self)
+    }
+    
+    @objc func saveData() {
+        selectedRule.storeValue()
+        UserDefaults.standard.set(incomeTextField.textField.text, forKey: "incomeValue")
+        if alreadyHaveRule {
+            let alert = UIAlertController(title: "Saved", message: "You updated with success the rule or the income.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
+            self.present(alert, animated: true)
+        }
+    }
+    
+    func getData() {
+        if let incomeString = UserDefaults.standard.object(forKey: "incomeValue") as? String {
+            alreadyHaveRule = true
+            incomeTextField.textField.text = incomeString
+            let result = selectedRule.calculatePercentage(incomeSalary: incomeString)
+            assignValues(values: result)
+            
+            nextButton.setTitle("Save", for: .normal)
+            nextButton.removeTarget(self, action:  #selector(nextView), for: .touchUpInside)
+            nextButton.addTarget(self, action: #selector(saveData), for: .touchUpInside)
+        }
     }
     
     // MARK: CreateView

@@ -80,6 +80,11 @@ class RuleSliderView: UIView {
         valueLabel.text = String(format: "%.0f", rangeSlider.value) + "%"
         sliderValueChanged(rangeSlider)
     }
+    
+    func setDefaultSliderValue(value: Float) {
+        slider.value = value
+        valueLabel.text = String(format: "%.0f", value) + "%"
+    }
 }
 
 extension RuleSliderView : SliderValueChangedProtocol {

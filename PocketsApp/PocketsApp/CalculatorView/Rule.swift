@@ -43,11 +43,14 @@ extension Rule {
         UserDefaults.standard.set(encoded, forKey: "selectedRule")
     }
     
-    mutating func retriveValue() {
+    mutating func retriveValue() -> Rule? {
         guard let data = UserDefaults.standard.object(forKey: "selectedRule") as? Data,
-              let object = try? JSONDecoder().decode(Rule.self, from: data) else {
-                  return
-              }
+              let object = try? JSONDecoder().decode(Rule.self, from: data) else { return nil }
         self = object
+        return object
+    }
+    
+    func isDefaultRule() -> Bool {
+        return necessitiesPercentage == 50 && wantsPercentage == 30 && savingsPercentage == 20
     }
 }
