@@ -139,15 +139,16 @@ final class CalculatorRuleViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubview(nextButton)
         view.addSubview(mainStackView)
-                
-        nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+        
+        let safeArea = view.safeAreaLayoutGuide
+        nextButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -50).isActive = true
         nextButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
         nextButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        nextButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        nextButton.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
         
-        mainStackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
-        mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24).isActive = true
-        mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:  -24).isActive = true
+        mainStackView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 50).isActive = true
+        mainStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 24).isActive = true
+        mainStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant:  -24).isActive = true
     }
 }
 

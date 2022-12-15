@@ -79,8 +79,8 @@ class ExpensesViewCell: UITableViewCell {
         self.addSubview(verticalStackView)
         
         verticalStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
-        verticalStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5).isActive = true
-        verticalStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5).isActive = true
+        verticalStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24).isActive = true
+        verticalStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -24).isActive = true
         verticalStackView.topAnchor.constraint(equalTo: self.bottomAnchor, constant: -5).isActive = true
     }
     

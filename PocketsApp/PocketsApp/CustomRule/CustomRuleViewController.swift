@@ -89,20 +89,21 @@ final class CustomRuleViewController: UIViewController {
         view.addSubview(totalPercentageLabel)
         view.addSubview(nextButton)
         
-        titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
-        titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        let safeArea = view.safeAreaLayoutGuide
+        titleLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 20).isActive = true
+        titleLabel.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
         
-        nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+        nextButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -50).isActive = true
         nextButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
         nextButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         nextButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         mainStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 35).isActive = true
-        mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24).isActive = true
-        mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:  -24).isActive = true
+        mainStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 24).isActive = true
+        mainStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant:  -24).isActive = true
         
         totalPercentageLabel.topAnchor.constraint(equalTo: mainStackView.bottomAnchor, constant: 20).isActive = true
-        totalPercentageLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24).isActive = true
+        totalPercentageLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 24).isActive = true
     }
     
     //MARK: Selectors

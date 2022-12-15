@@ -16,14 +16,15 @@ struct DataModel {
         var title: String {
             switch self {
             case .necessity:
-                return "NECESSITIES"
+                return "Necessities - spent "
             case .want:
-                return "WANTS"
+                return "Wants - spent "
             case .save:
-                return "SAVINGS"
+                return "Saved until now: "
             }
         }
     }
+    
     var type: ExpensesType
     var title: String
     var description: String
