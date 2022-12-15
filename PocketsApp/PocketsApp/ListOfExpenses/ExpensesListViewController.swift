@@ -14,7 +14,6 @@ final class ExpensesListViewController: UIViewController {
         let view = UITableView(frame: .zero, style: .grouped)
         view.register(ExpensesViewCell.self, forCellReuseIdentifier: String(describing: ExpensesViewCell.self))
         view.separatorStyle = .singleLine
-        view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         view.delegate = self
         view.dataSource = self
@@ -69,18 +68,13 @@ final class ExpensesListViewController: UIViewController {
     }
     
     @objc func addTapped() {
-        
+        // navigate to the view where will add new expense
     }
 }
 
 extension ExpensesListViewController: UITableViewDelegate {
-
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
     }
 }
 
@@ -92,8 +86,6 @@ extension ExpensesListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.filter { $0.type.rawValue == section }.count
     }
-    
-    
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 100))

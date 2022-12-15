@@ -12,7 +12,6 @@ class ExpensesViewCell: UITableViewCell {
         let view = UILabel()
         view.font = .boldSystemFont(ofSize: 20)
         view.textColor = .blue
-        view.text = "------"
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -20,7 +19,6 @@ class ExpensesViewCell: UITableViewCell {
     lazy var descriptionLabel: UILabel = {
         let view = UILabel()
         view.font = .systemFont(ofSize: 16)
-        view.text = "------"
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -28,7 +26,6 @@ class ExpensesViewCell: UITableViewCell {
     lazy var dateLabel: UILabel = {
         let view = UILabel()
         view.font = .systemFont(ofSize: 10)
-        view.text = "------"
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -36,7 +33,6 @@ class ExpensesViewCell: UITableViewCell {
     lazy var amountLabel: UILabel = {
         let view = UILabel()
         view.font = .boldSystemFont(ofSize: 20)
-        view.text = "------"
         view.textColor = .red
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -61,8 +57,6 @@ class ExpensesViewCell: UITableViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
-    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

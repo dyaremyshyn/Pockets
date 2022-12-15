@@ -17,6 +17,8 @@
 		CEA0C8D5294A29DF00B82A0E /* ExpensesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0C8D3294A29DF00B82A0E /* ExpensesViewCell.swift */; };
 		CEA0C8D7294A2A0500B82A0E /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0C8D6294A2A0500B82A0E /* DataModel.swift */; };
 		CEA0C8D8294A2A0500B82A0E /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0C8D6294A2A0500B82A0E /* DataModel.swift */; };
+		CEA0C8DA294B686600B82A0E /* PocketsTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0C8D9294B686600B82A0E /* PocketsTabBarController.swift */; };
+		CEA0C8DB294B686600B82A0E /* PocketsTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0C8D9294B686600B82A0E /* PocketsTabBarController.swift */; };
 		CEEBBC7A293E43E700323FC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEBBC79293E43E700323FC1 /* AppDelegate.swift */; };
 		CEEBBC7C293E43E700323FC1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEBBC7B293E43E700323FC1 /* SceneDelegate.swift */; };
 		CEEBBC7E293E43E700323FC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEBBC7D293E43E700323FC1 /* ViewController.swift */; };
@@ -59,6 +61,7 @@
 		CEA0C8D02948EDC300B82A0E /* ExpensesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListViewController.swift; sourceTree = "<group>"; };
 		CEA0C8D3294A29DF00B82A0E /* ExpensesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewCell.swift; sourceTree = "<group>"; };
 		CEA0C8D6294A2A0500B82A0E /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		CEA0C8D9294B686600B82A0E /* PocketsTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketsTabBarController.swift; sourceTree = "<group>"; };
 		CEEBBC76293E43E700323FC1 /* PocketsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEBBC79293E43E700323FC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEEBBC7B293E43E700323FC1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +158,7 @@
 				CEEBBC82293E43EB00323FC1 /* Assets.xcassets */,
 				CEEBBC84293E43EB00323FC1 /* LaunchScreen.storyboard */,
 				CEEBBC87293E43EB00323FC1 /* Info.plist */,
+				CEA0C8D9294B686600B82A0E /* PocketsTabBarController.swift */,
 			);
 			path = PocketsApp;
 			sourceTree = "<group>";
@@ -333,6 +337,7 @@
 				CEA0C8C72948A46700B82A0E /* CustomRuleViewController.swift in Sources */,
 				CEA0C8D7294A2A0500B82A0E /* DataModel.swift in Sources */,
 				CEA0C8CD2948A67300B82A0E /* RuleSliderView.swift in Sources */,
+				CEA0C8DA294B686600B82A0E /* PocketsTabBarController.swift in Sources */,
 				CEEBBC7A293E43E700323FC1 /* AppDelegate.swift in Sources */,
 				CEEBBCAF2940B1CD00323FC1 /* CalculatorRuleViewController.swift in Sources */,
 				CEEBBC7C293E43E700323FC1 /* SceneDelegate.swift in Sources */,
@@ -355,6 +360,7 @@
 				CEEBBCB02940B1CD00323FC1 /* CalculatorRuleViewController.swift in Sources */,
 				CEEBBC91293E43EB00323FC1 /* PocketsAppTests.swift in Sources */,
 				CEEBBCB92940FEC400323FC1 /* IncomeTextFieldView.swift in Sources */,
+				CEA0C8DB294B686600B82A0E /* PocketsTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if let windowScene = scene as? UIWindowScene, UserDefaults.standard.object(forKey: "incomeValue") != nil {
             let window = UIWindow(windowScene: windowScene)
-            let navigationController = UINavigationController(rootViewController: ExpensesListViewController())
+            let navigationController = UINavigationController(rootViewController: PocketsTabBarController())
             window.rootViewController = navigationController
             self.window = window
             window.makeKeyAndVisible()
