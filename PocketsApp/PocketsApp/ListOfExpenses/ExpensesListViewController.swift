@@ -9,6 +9,7 @@ import UIKit
 
 final class ExpensesListViewController: UIViewController {
     var list = [DataModel]()
+    var ruleValues: RuleValues?
     
     private lazy var tableView: UITableView = {
         let view = UITableView(frame: .zero, style: .grouped)
@@ -58,7 +59,7 @@ final class ExpensesListViewController: UIViewController {
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
-    func totalExpenses(section: Int) -> Float {
+    func accumulatedExpenses(section: Int) -> Float {
         var total:Float = 0
         let array = list.filter {$0.type.rawValue == section}
         array.forEach { expense in
@@ -67,8 +68,24 @@ final class ExpensesListViewController: UIViewController {
         return total
     }
     
+    func calculateTotalExpenses(type: DataModel.ExpensesType) -> String {
+        guard let income = UserDefaults.standard.object(forKey: "incomeValue") as? String else { return "" }
+        var rule = Rule(necessitiesPercentage: 0, wantsPercentage: 0, savingsPercentage: 0)
+        rule = rule.retriveValue() ?? rule
+        ruleValues = rule.calculatePercentage(incomeSalary: income)
+        switch type {
+        case .necessity:
+            return " of " + (ruleValues?.necessitiesValue ?? "")
+        case .want:
+            return" of " +  (ruleValues?.wantsValue ?? "")
+        case .save:
+            return ""
+        }
+    }
+    
     @objc func addTapped() {
-        // navigate to the view where will add new expense
+        let vc = ExpenseViewController()
+        show(vc, sender: self)
     }
 }
 
@@ -92,9 +109,12 @@ extension ExpensesListViewController: UITableViewDataSource {
         header.backgroundColor = .blue
         
         let titleLabel = UILabel(frame: CGRect(x: 20, y: 5, width: view.frame.size.width - 40, height: header.frame.height - 10))
-        let expenseTitle = (DataModel.ExpensesType.allCases.first(where: {$0.rawValue == section })?.title ?? "")
-        titleLabel.text = expenseTitle + String(format: "%.2f", totalExpenses(section: section)) + "€"
-        titleLabel.font = .boldSystemFont(ofSize: 20)
+        let expenseType = DataModel.ExpensesType.allCases.first(where: {$0.rawValue == section }) ?? DataModel.ExpensesType.save
+        let expenseTitle = expenseType.title
+        let title = expenseTitle + String(format: "%.2f", accumulatedExpenses(section: section)) + "€"
+    
+        titleLabel.text = title + calculateTotalExpenses(type: expenseType)
+        titleLabel.font = .boldSystemFont(ofSize: 17)
         titleLabel.textColor = .white
         
         header.addSubview(titleLabel)

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE4AE3A6294CCBEC00466CA6 /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AE3A5294CCBEC00466CA6 /* ExpenseViewController.swift */; };
+		CE4AE3A7294CCBF200466CA6 /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AE3A5294CCBEC00466CA6 /* ExpenseViewController.swift */; };
+		CE4AE3A9294CCE1A00466CA6 /* PocketsTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AE3A8294CCE1A00466CA6 /* PocketsTextFieldView.swift */; };
+		CE4AE3AA294CCE1A00466CA6 /* PocketsTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AE3A8294CCE1A00466CA6 /* PocketsTextFieldView.swift */; };
 		CEA0C8C72948A46700B82A0E /* CustomRuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0C8C62948A46700B82A0E /* CustomRuleViewController.swift */; };
 		CEA0C8C82948A46700B82A0E /* CustomRuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0C8C62948A46700B82A0E /* CustomRuleViewController.swift */; };
 		CEA0C8CD2948A67300B82A0E /* RuleSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0C8CC2948A67300B82A0E /* RuleSliderView.swift */; };
@@ -56,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE4AE3A5294CCBEC00466CA6 /* ExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewController.swift; sourceTree = "<group>"; };
+		CE4AE3A8294CCE1A00466CA6 /* PocketsTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketsTextFieldView.swift; sourceTree = "<group>"; };
 		CEA0C8C62948A46700B82A0E /* CustomRuleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRuleViewController.swift; sourceTree = "<group>"; };
 		CEA0C8CC2948A67300B82A0E /* RuleSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleSliderView.swift; sourceTree = "<group>"; };
 		CEA0C8D02948EDC300B82A0E /* ExpensesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +112,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE4AE3A4294CCBD700466CA6 /* ExpenseView */ = {
+			isa = PBXGroup;
+			children = (
+				CE4AE3A5294CCBEC00466CA6 /* ExpenseViewController.swift */,
+			);
+			path = ExpenseView;
+			sourceTree = "<group>";
+		};
 		CEA0C8C52948A44600B82A0E /* CustomRule */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +161,7 @@
 		CEEBBC78293E43E700323FC1 /* PocketsApp */ = {
 			isa = PBXGroup;
 			children = (
+				CE4AE3A4294CCBD700466CA6 /* ExpenseView */,
 				CEA0C8CF2948ED2900B82A0E /* ListOfExpenses */,
 				CEA0C8C52948A44600B82A0E /* CustomRule */,
 				CEEBBCAD2940B1B900323FC1 /* CalculatorView */,
@@ -186,6 +201,7 @@
 				CEEBBCAA293FA62F00323FC1 /* CheckBox.swift */,
 				CEEBBCB72940FEC400323FC1 /* IncomeTextFieldView.swift */,
 				CEA0C8CC2948A67300B82A0E /* RuleSliderView.swift */,
+				CE4AE3A8294CCE1A00466CA6 /* PocketsTextFieldView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -330,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4AE3A9294CCE1A00466CA6 /* PocketsTextFieldView.swift in Sources */,
 				CEEBBCAB293FA62F00323FC1 /* CheckBox.swift in Sources */,
 				CEEBBCB82940FEC400323FC1 /* IncomeTextFieldView.swift in Sources */,
 				CEA0C8D12948EDC300B82A0E /* ExpensesListViewController.swift in Sources */,
@@ -337,6 +354,7 @@
 				CEA0C8C72948A46700B82A0E /* CustomRuleViewController.swift in Sources */,
 				CEA0C8D7294A2A0500B82A0E /* DataModel.swift in Sources */,
 				CEA0C8CD2948A67300B82A0E /* RuleSliderView.swift in Sources */,
+				CE4AE3A6294CCBEC00466CA6 /* ExpenseViewController.swift in Sources */,
 				CEA0C8DA294B686600B82A0E /* PocketsTabBarController.swift in Sources */,
 				CEEBBC7A293E43E700323FC1 /* AppDelegate.swift in Sources */,
 				CEEBBCAF2940B1CD00323FC1 /* CalculatorRuleViewController.swift in Sources */,
@@ -355,11 +373,13 @@
 				CEA0C8D5294A29DF00B82A0E /* ExpensesViewCell.swift in Sources */,
 				CEA0C8D22948EDC300B82A0E /* ExpensesListViewController.swift in Sources */,
 				CEA0C8CE2948A67300B82A0E /* RuleSliderView.swift in Sources */,
+				CE4AE3A7294CCBF200466CA6 /* ExpenseViewController.swift in Sources */,
 				CEA0C8D8294A2A0500B82A0E /* DataModel.swift in Sources */,
 				CEEBBCB62940EDD200323FC1 /* Rule.swift in Sources */,
 				CEEBBCB02940B1CD00323FC1 /* CalculatorRuleViewController.swift in Sources */,
 				CEEBBC91293E43EB00323FC1 /* PocketsAppTests.swift in Sources */,
 				CEEBBCB92940FEC400323FC1 /* IncomeTextFieldView.swift in Sources */,
+				CE4AE3AA294CCE1A00466CA6 /* PocketsTextFieldView.swift in Sources */,
 				CEA0C8DB294B686600B82A0E /* PocketsTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,6 +23,17 @@ struct DataModel {
                 return "Saved until now: "
             }
         }
+        
+        var pickerTitle: String {
+            switch self {
+            case .necessity:
+                return "Necessity"
+            case .want:
+                return "Want"
+            case .save:
+                return "Save"
+            }
+        }
     }
     
     var type: ExpensesType

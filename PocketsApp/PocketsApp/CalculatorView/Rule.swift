@@ -53,4 +53,6 @@ extension Rule {
     func isDefaultRule() -> Bool {
         return necessitiesPercentage == 50 && wantsPercentage == 30 && savingsPercentage == 20
     }
+    
+    
 }
